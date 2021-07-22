@@ -16,8 +16,11 @@
   * [Questions](#questions)
 
   ## Installation Instructions
-  git clone git@github.com:eycs0317/noteTaker.git
-  npm instaill
+
+  git clone https://github.com/eycs0317/noteTaker.git
+
+  npm i
+
   npm start
 
   ## Usage
