@@ -24,6 +24,10 @@
   After follow the installation instructions.
   click on this link: http://localhost:3000/
 
+  or
+
+  Just use the Live Link without the installation [Link](https://morning-wildwood-16995.herokuapp.com/)
+
   ## License
 [MIT License](https://opensource.org/licenses/MIT)
 
