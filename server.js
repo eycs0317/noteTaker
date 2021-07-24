@@ -4,8 +4,7 @@ const port = process.env.PORT || 3000
 const path = require('path')
 const fs = require('fs')
 const { v4: uuidv4 } = require('uuid');
-// //uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
-// console.log('uuid', uuidv4())
+
 
 app.use(express.static('public'))
 app.use(express.json());
@@ -24,7 +23,6 @@ app.get('/api/notes', (req, res) => {
 })
 
 app.post('/api/notes', (req, res) => {
-  console.log('req.body', req.body.title)
   let newNote = req.body;
   newNote.id = uuidv4()
 
@@ -33,7 +31,6 @@ app.post('/api/notes', (req, res) => {
       console.error(err)
       return
     }
-    console.log('data--->',data)
     let dataArr = JSON.parse(data)
     dataArr.push(newNote)
 
@@ -56,7 +53,6 @@ app.post('/api/notes', (req, res) => {
       let filtedArr = dataDel.filter(item => {
         return item.id !== id
       })
-      console.log('filtedArr', filtedArr)
       fs.writeFile(path.join(__dirname,'db/db.json'), JSON.stringify(filtedArr), (err) => {
         (err) ? console.log(err) : console.log('success!!')
       } )
